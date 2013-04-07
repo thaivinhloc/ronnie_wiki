@@ -1,0 +1,51 @@
+====== Programming ======
+
+**PHP**
+
+  * [[start>programming|Frameworks]] :!:
+  * [[doku>users|Happy Users]]
+  * [[doku>press|Who wrote about it]]
+  * [[doku>blogroll|What Bloggers think]]
+  * [[http://www.wikimatrix.org/show/DokuWiki|Compare it with other wiki software]]
+===== PHP =====
+
+===== MySQL =====
+
+===== Android =====
+
+===== Ruby =====
+<code>
+	private function draw_pie($width, $height, $dataArr) {
+		$pie_image = imagecreate($width, $height);
+		$x = round($width/2)-1;
+		$y = round($height/2)-1;
+		$total = array_sum($dataArr);
+		$angle_start = 0;
+		$ylegend = 2;
+		$black = imagecolorallocate($pie_image, 0, 0, 0);
+		$is_empty = true;
+		
+		foreach ( $dataArr as $label => $value ) {
+			if ( $label == 1 ) { // red
+				$color = imagecolorallocate($pie_image, 255, 0, 0);
+			} elseif ($label == 2) { // yellow
+				$color = imagecolorallocate($pie_image, 255, 255, 102);
+			} elseif ($label == 3) { // green
+				$color = imagecolorallocate($pie_image, 128, 255, 0);
+			} else {
+				$color = imagecolorallocate($pie_image, 51, 153, 255);
+			}
+			$angle_done = ($value/$total) * 360; /** angle calculated for 360 degrees */
+			$perc       = round(($value/$total) * 100, 1); /** percentage calculated */
+			imagefilledarc($pie_image, $x, $y, $width-1, $height-1, $angle_start, $angle_done+= $angle_start, $color, IMG_ARC_PIE);
+			$ylegend += 4;
+			$angle_start = $angle_done;
+		}
+
+		imagecolortransparent($pie_image, $black);
+		header("Content-type: image/png");
+
+		imagepng($pie_image);
+		imagedestroy($pie_image);
+	}
+</code>

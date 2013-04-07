@@ -1,0 +1,75 @@
+
+<h1 class="sectionedit1" id="programming">Programming</h1>
+<div class="level1">
+
+<p>
+<strong><abbr title="Hypertext Preprocessor">PHP</abbr></strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/search?q=programming&amp;btnI=lucky" class="interwiki iw_go" title="http://www.google.com/search?q=programming&amp;btnI=lucky">Frameworks</a> <img src="/dokuwiki/lib/images/smileys/icon_exclaim.gif" class="icon" alt=":!:" /></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.dokuwiki.org/users" class="interwiki iw_doku" title="http://www.dokuwiki.org/users">Happy Users</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.dokuwiki.org/press" class="interwiki iw_doku" title="http://www.dokuwiki.org/press">Who wrote about it</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.dokuwiki.org/blogroll" class="interwiki iw_doku" title="http://www.dokuwiki.org/blogroll">What Bloggers think</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.wikimatrix.org/show/DokuWiki" class="urlextern" title="http://www.wikimatrix.org/show/DokuWiki"  rel="nofollow">Compare it with other wiki software</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT1 SECTION "Programming" [1-272] -->
+<h2 class="sectionedit2" id="php">PHP</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT2 SECTION "PHP" [273-289] -->
+<h2 class="sectionedit3" id="mysql">MySQL</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT3 SECTION "MySQL" [290-308] -->
+<h2 class="sectionedit4" id="android">Android</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT4 SECTION "Android" [309-329] -->
+<h2 class="sectionedit5" id="ruby">Ruby</h2>
+<div class="level2">
+<pre class="code">	private function draw_pie($width, $height, $dataArr) {
+		$pie_image = imagecreate($width, $height);
+		$x = round($width/2)-1;
+		$y = round($height/2)-1;
+		$total = array_sum($dataArr);
+		$angle_start = 0;
+		$ylegend = 2;
+		$black = imagecolorallocate($pie_image, 0, 0, 0);
+		$is_empty = true;
+		
+		foreach ( $dataArr as $label =&gt; $value ) {
+			if ( $label == 1 ) { // red
+				$color = imagecolorallocate($pie_image, 255, 0, 0);
+			} elseif ($label == 2) { // yellow
+				$color = imagecolorallocate($pie_image, 255, 255, 102);
+			} elseif ($label == 3) { // green
+				$color = imagecolorallocate($pie_image, 128, 255, 0);
+			} else {
+				$color = imagecolorallocate($pie_image, 51, 153, 255);
+			}
+			$angle_done = ($value/$total) * 360; /** angle calculated for 360 degrees */
+			$perc       = round(($value/$total) * 100, 1); /** percentage calculated */
+			imagefilledarc($pie_image, $x, $y, $width-1, $height-1, $angle_start, $angle_done+= $angle_start, $color, IMG_ARC_PIE);
+			$ylegend += 4;
+			$angle_start = $angle_done;
+		}
+
+		imagecolortransparent($pie_image, $black);
+		header(&quot;Content-type: image/png&quot;);
+
+		imagepng($pie_image);
+		imagedestroy($pie_image);
+	}</pre>
+
+</div>
+<!-- EDIT5 SECTION "Ruby" [330-] -->
